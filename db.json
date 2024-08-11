@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "Employees": [
+    {
+      "firstName": "Saivignesh",
+      "lastName": "P",
+      "email": "saivignesh14012001@gmail.com",
+      "dob": "2001-01-13T18:30:00.000Z",
+      "gender": "male",
+      "course": "Graduate",
+      "Company": "Mphasis",
+      "id": "0a4f"
+    },
+    {
+      "firstName": "Rohini",
+      "lastName": "Bharadwaj",
+      "email": "rohini@gmail.com",
+      "dob": "2002-01-11T18:30:00.000Z",
+      "gender": "female",
+      "course": "Diploma",
+      "Company": "Mphasis",
+      "id": "2b04"
+    }
+  ]
+}

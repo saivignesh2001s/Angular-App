@@ -1,0 +1,61 @@
+<div mat-dialog-header>
+    <h4>Employee form</h4>
+</div>
+<form [formGroup]="employee">
+<div mat-dialog-content>
+    <div class="row">
+        <mat-form-field appearance="outline" class="field-control">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="Ex. Sai" formControlName="firstName">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="field-control">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Ex. Vignesh"  formControlName="lastName">
+          </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline" class="field-control">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Ex. test@gmail.com" type="email"  formControlName="email">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="field-control">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput [matDatepicker]="picker"  formControlName="dob">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          
+    </div>
+    <div class="row">
+        <mat-radio-group aria-label="Select an option" class="field-control" formControlName="gender">
+            <mat-label><b>Gender</b></mat-label>
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+            <mat-radio-button value="others">Others</mat-radio-button>
+          </mat-radio-group>
+          
+
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline" class="field-control">
+            <mat-label>Select the education</mat-label>
+            <mat-select formControlName="course">
+              @for (course of education; track course) {
+                <mat-option [value]="course">{{course}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="field-control" >
+            <mat-label>Company</mat-label>
+            <input matInput placeholder="Ex. ABC company"  formControlName="Company">
+          </mat-form-field>
+
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button type="button" (click)="Cancel()">Cancel
+    </button>
+    <button mat-raised-button [disabled]="!employee.valid" (click)="submit1(employee.value)">{{data?"Update":"Save"}}</button>
+</div>
+</form>
